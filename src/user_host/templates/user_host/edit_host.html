@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать хост</title>
+</head>
+<body>
+<h1>Редактировать хост</h1>
+
+<form action="{% url 'edit_host' host.id %}" method="post">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    {{ form.non_field.errors }}
+
+    <button type="submit" class="btn btn-primary btn-block">Редактировать хост</button>
+
+
+</form>
+</body>
+</html>

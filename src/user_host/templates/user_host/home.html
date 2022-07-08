@@ -1,0 +1,29 @@
+<h1>Главная</h1>
+
+{% if request.user.is_authenticated %}
+Добро пожаловать! {{ user.username }}  |  <a href="{% url 'logout' %}">Выход</a>
+
+<div>
+    <a href="{% url 'add_host' %}">Добавить хост</a>
+</div>
+
+<div>
+        {% for item in host %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="media">
+                    <div class="media-body">
+                        <p class="card-text">{{ item.content }}</p>
+                        <a href="{{ item.get_absolute_url }}" class="btn btn-primary">{{ item }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+
+{% else %}
+
+<a href="{% url 'register' %}">Register</a> | <a href="{% url 'login'%} ">Login</a>
+
+{% endif %}

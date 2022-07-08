@@ -1,0 +1,17 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h2> Пользователь: <a href="{% url 'home' %}"> {{ host_item.author }}</a> </h2>
+
+        <a class="navbar-brand" href="{% url 'home' %}">Назад</a> | <a href="edit_host/{{host.id}}">Изменить_хост</a>
+
+    </div>
+    <div class="card-body">
+        <h3 class="card-title"> IP адрес {{ host_item.ip_address }}</h3>
+        <h3 class="card-title"> Порт {{ host_item.port }}</h3>
+        <h3 class="card-title"> Вид ресурса {{ host_item.get_type_of_resource_display }}</h3>
+    </div>
+    <div class="card-footer text-muted">
+        <h5> Дата и время последнего редактирования ресурса </h5>
+        <h5> {{ host_item.updated_at|date:'Y-m-d H:i:s' }} </h5>
+    </div>
+</div>
