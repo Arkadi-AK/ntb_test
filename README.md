@@ -7,6 +7,7 @@ python3 -m venv venv
 cd ntb_test
 pip install -r requirements.txt
 ```
+Введите секретный код (SECRET_KEY) в файл ".env".
 
 ## Запуск
 
